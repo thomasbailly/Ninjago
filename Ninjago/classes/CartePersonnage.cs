@@ -40,7 +40,7 @@ namespace Ninjago.classes
 
         public override string ToString()
         {
-            return base.ToString() + "Attaque : " + this.attaque;
+            return base.ToString();
         }
     }
 }

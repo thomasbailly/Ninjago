@@ -35,7 +35,7 @@ namespace Ninjago.classes
         
         public override string ToString()
         {
-            return "n° : " + this.id + " de nom : " + this.nom + " qui est de type " + " quantite " + this.quantite;
+            return this.nom + " x" + this.quantite; 
         }
         
     }

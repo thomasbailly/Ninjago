@@ -20,13 +20,22 @@ namespace Ninjago
         {
             InitializeComponent();
         }
-
-        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        
+        private void metroButton1_Click(object sender, EventArgs e)
         {
             List<Carte> collection = new List<Carte>();
             Carte c1 = new CartePersonnage("1", "kai", 1, 120, 120, 120, 120);
             collection.Add(c1);
             listBox1.Items.Add(collection);
+            foreach (Carte uneCarte in collection)
+            {
+                listBox1.Items.Add(uneCarte);
+            }
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listBox2.Items.Add(listBox1.SelectedItem);
         }
     }
 }
