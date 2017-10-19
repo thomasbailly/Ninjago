@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using Ninjago.classes;
 using System.Net;
 using Newtonsoft.Json.Linq;
-
+using Newtonsoft.Json;
 namespace Ninjago
 {
     public partial class collection : MetroForm
@@ -23,11 +23,10 @@ namespace Ninjago
         
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            getJsonNinjago("file:///C:/Users/thoma/Desktop/test.json");
-            foreach (Carte uneCarte in )
-            {
-                listBox1.Items.Add(uneCarte);
-            }
+           List<Carte> lc=  getJsonNinjago("http://192.168.1.132/ninjago/public/api");
+            string output =JsonConvert.SerializeObject(lc);
+            MessageBox.Show(output);
+           
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,30 +48,32 @@ namespace Ninjago
                 {
                     if (item["type"].ToString() == "P")
                     {
-                        CartePersonnage uneCarteP = new CartePersonnage(item["id"].ToString(), item["nom"].ToString(), 
-                            Convert.ToInt32(item["quantite"].ToString()), Convert.ToInt32(item["vitesse"].ToString()),
+                        CartePersonnage uneCarteP = new CartePersonnage(item["numero"].ToString(), item["nom"].ToString(), 
+                           0, Convert.ToInt32(item["vitesse"].ToString()),
                             Convert.ToInt32(item["attaque"].ToString()), Convert.ToInt32(item["defense"].ToString()), 
                             Convert.ToInt32(item["force"].ToString()));
                         lesCartes.Add(uneCarteP);
                     }
                     else if (item["type"].ToString() == "A")
                     {
-                        CarteAction uneCarteA = new CarteAction(item["id"].ToString(), item["nom"].ToString(),
-                            Convert.ToInt32(item["quantite"].ToString()), item["description"].ToString() );
+                        CarteAction uneCarteA = new CarteAction(item["numero"].ToString(), item["nom"].ToString(),
+                           0, item["description"].ToString() );
                         lesCartes.Add(uneCarteA);
                     }
                     else if (item["type"].ToString() == "V")
                     {
-                        CarteAction uneCarteV = new CarteAction(item["id"].ToString(), item["nom"].ToString(),
-                            Convert.ToInt32(item["quantite"].ToString()), item["description"].ToString());
+                        CarteAction uneCarteV = new CarteAction(item["numero"].ToString(), item["nom"].ToString(),
+                           0, item["description"].ToString());
                         lesCartes.Add(uneCarteV);
                     }                      
                 }
-                return lesCartes;
+                
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
             }
+            return lesCartes;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ninjago.classes
 {
-    class CarteAction:Carte
+    public class CarteAction:Carte
     {
         String description;
 

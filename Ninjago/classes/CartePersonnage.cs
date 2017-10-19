@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ninjago.classes
 {
-    class CartePersonnage:Carte
+   public class CartePersonnage:Carte
     {
         int vitesse;
         int attaque;
