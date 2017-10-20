@@ -12,7 +12,7 @@ namespace Ninjago.classes
         private String nom;
         private int quantite;
 
-        protected string Nom
+        public string Nom
         {
             get
             {
@@ -25,7 +25,7 @@ namespace Ninjago.classes
             }
         }
 
-        protected int Quantite
+        public int Quantite
         {
             get
             {

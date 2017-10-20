@@ -12,6 +12,8 @@ using Ninjago.classes;
 using System.Net;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using System.IO;
+
 namespace Ninjago
 {
     public partial class collection : MetroForm
@@ -24,9 +26,17 @@ namespace Ninjago
         private void metroButton1_Click(object sender, EventArgs e)
         {
            List<Carte> lc=  getJsonNinjago("http://192.168.1.132/ninjago/public/api");
-            string output =JsonConvert.SerializeObject(lc);
+            foreach (Carte cc in lc)
+            {
+                listBox1.Items.Add(cc);
+            }
+            CollectionCartes c = new CollectionCartes("Robinho");
+            c.LesCartes = lc;
+
+            string output = JsonConvert.SerializeObject(c);
             MessageBox.Show(output);
-           
+            File.WriteAllText("collection.json", output);
+
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
