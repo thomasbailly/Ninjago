@@ -61,7 +61,7 @@
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.Location = new System.Drawing.Point(629, 364);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(91, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(93, 19);
             this.metroLabel1.TabIndex = 2;
             this.metroLabel1.Text = "100% CROCO";
             // 
@@ -85,7 +85,6 @@
             this.Controls.Add(this.metroButton2);
             this.Controls.Add(this.metroButton1);
             this.Name = "Form1";
-            this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChoixPlateau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChoixPlateau.Designer.cs">
+      <DependentUpon>ChoixPlateau.cs</DependentUpon>
+    </Compile>
     <Compile Include="classes\Carte.cs" />
     <Compile Include="classes\CarteAction.cs" />
     <Compile Include="classes\CartePersonnage.cs" />
@@ -81,14 +87,29 @@
       <DependentUpon>Jeu.cs</DependentUpon>
     </Compile>
     <Compile Include="Joueur.cs" />
+    <Compile Include="Partie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Partie.Designer.cs">
+      <DependentUpon>Partie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Plateau.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChoixPlateau.resx">
+      <DependentUpon>ChoixPlateau.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="collection.resx">
       <DependentUpon>collection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Jeu.resx">
+      <DependentUpon>Jeu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partie.resx">
+      <DependentUpon>Partie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

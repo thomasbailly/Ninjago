@@ -11,24 +11,16 @@ using System.Windows.Forms;
 
 namespace Ninjago
 {
-    public partial class Jeu : MetroForm
+    public partial class Partie : MetroForm
     {
-        public Jeu()
+        public Partie()
         {
             InitializeComponent();
         }
 
-        private void BtnPlay_Click(object sender, EventArgs e)
+        private void Partie_Load(object sender, EventArgs e)
         {
-            Partie p = new Partie();
-            p.Show();
 
-        }
-
-        private void btn_ChoixPlateau_Click(object sender, EventArgs e)
-        {
-            ChoixPlateau cp = new ChoixPlateau();
-            cp.Show();
         }
     }
 }
