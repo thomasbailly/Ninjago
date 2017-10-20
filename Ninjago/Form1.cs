@@ -28,7 +28,6 @@ namespace Ninjago
         {
             Jeu bbb = new Jeu();
             bbb.Show();
-
         }
     }
 }

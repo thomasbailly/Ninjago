@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ninjago.classes
 {
-    class CartePersonnage:Carte
+   public class CartePersonnage:Carte
     {
         int vitesse;
         int attaque;
@@ -40,7 +40,7 @@ namespace Ninjago.classes
 
         public override string ToString()
         {
-            return base.ToString() + "Attaque : " + this.attaque;
+            return base.ToString();
         }
     }
 }

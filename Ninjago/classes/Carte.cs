@@ -6,23 +6,48 @@ using System.Threading.Tasks;
 
 namespace Ninjago.classes
 {
-    abstract class Carte
+    public abstract class Carte
     {
         private String id;
-        protected String nom;
-        protected int quantite;
+        private String nom;
+        private int quantite;
 
-        
+        public string Nom
+        {
+            get
+            {
+                return nom;
+            }
+
+            set
+            {
+                nom = value;
+            }
+        }
+
+        public int Quantite
+        {
+            get
+            {
+                return quantite;
+            }
+
+            set
+            {
+                quantite = value;
+            }
+        }
+
         public Carte(String unId, String unNom, int uneQuantite)
         {
             this.id = unId;
-            this.nom = unNom;
-            this.quantite = uneQuantite;
+            this.Nom = unNom;
+            this.Quantite = uneQuantite;
         }
 
         public String getNom()
         {
-            return this.nom;
+            return this.Nom;
         }
         public String getId()
         {
@@ -30,13 +55,14 @@ namespace Ninjago.classes
         }
         public int getQuantite()
         {
-            return this.quantite;
+            return this.Quantite;
         }
         
         public override string ToString()
         {
-            return "n° : " + this.id + " de nom : " + this.nom + " qui est de type " + " quantite " + this.quantite;
+            return this.Nom + " x" + this.Quantite; 
         }
         
     }
 }
+
